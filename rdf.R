@@ -5,7 +5,7 @@ rdf <- function (y,x,significance) {
   a <- matrix(y, nrow=1)
   b <- matrix(x, nrow=1)
   n <- length(a)
-  # calculamos el cros espectro mediante la funci?n cperiodograma
+  # calculamos el cros espectro mediante la funcion cperiodograma
   cperiodograma <- function(y,x) {
 # Author: Francisco Parra Rodr?guez
 # http://econometria.wordpress.com/2013/08/21/estimation-of-time-varying-regression-coefficients/ 
@@ -50,7 +50,7 @@ tabla <- data.frame(omega,frecuencia, periodos,densidad)
 data.frame(tabla[2:((n+1)/2),])}
 }
   cper <- cperiodograma(a,b)
-# Ordenamos de mayor a menor las densidades absolutas del periodograma, utilizando la funci?n "sort.data.frame" function, Kevin Wright. Package taRifx
+# Ordenamos de mayor a menor las densidades absolutas del periodograma, utilizando la funcion "sort.data.frame" function, Kevin Wright. Package taRifx
   S1 <- data.frame(f1=cper$frecuencia,p=abs(cper$densidad))
   S <- sort.data.frame (S1,formula=~-p)
   id <- seq(2,n)
@@ -61,7 +61,7 @@ data.frame(tabla[2:((n+1)/2),])}
   colnames(m) <- c("f1","id")
   M <- sort.data.frame (m,formula=~id)
   M <- rbind(c(1,1),M)
-  # Obtenemos la funci?n auxiliar (cdf) del predictor y se ordena seg?n el indice de las mayores densidades absolutas del co-espectro.
+  # Obtenemos la funcion auxiliar (cdf) del predictor y se ordena seg?n el indice de las mayores densidades absolutas del co-espectro.
   cx <- cdf(b)
   id <- seq(1,n)
   S1 <- data.frame(cx,c=id)
@@ -102,4 +102,4 @@ cy <- gdf(a)
   datos <- data.frame(cbind(t(a),t(b),F,res))
   colnames(datos) <- c("Y","X","F","res")
 list(datos=datos,regresores=t(X),criterio=criterio$i[1])}
-       }
+}

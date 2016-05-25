@@ -1,8 +1,27 @@
 # descomponer-1.2
-Nuevas funciones para el package descomponer
+descomponer.R
+
+nueva función descomponer que corrigue errores en descomponer 1.
+
+MW.R
+
+Función que calcula matriz ortogonal, $W$, sugerida por Harvey (1978), con el elemento (j,t)th :
+
+$$\begin{equation}
+w_{jt} = \left\lbrace\begin{array}{ll}\left(\frac{1}T\right) ^\frac{1}2 & \forall j=1\\
+\left(\frac{2}T\right) ^\frac{1}2 \cos\left[\frac{\pi j(t-1)}T\right] & \forall j=2,4,6,..\frac{(T-2)}{(T-1)}\\
+\left(\frac{2}T\right) ^\frac{1}2 \sin\left[\frac{\pi (j-1)(t-1)}T\right] & \forall j=3,5,7,..\frac{(T-2)}T\\
+\left(\frac{1}T\right) ^\frac{1}2 (-1)^{t+1} & \forall j=T\end{array}\right.\end{equation}$$
+Nuevas funciones para el package descomponer que no se han podido subir al package R.
+
+Harvey, A.C. (1978), Linear Regression in the Frequency Domain, International Economic Review, 19, 507-512.
+
 TD.- Datos para crear un data.frame con los niveles de significación para el test de Durbin(1969):
+
 DURBIN, J., "Tests for Serial Correlation in Regression Analysis based on the Periodogram ofLeast-Squares Residuals," Biometrika, 56, (No. 1, 1969), 1-15.
+
 Función rdf (a,b.significance)
+
 Realiza la regresión en el dominio de la frecuencia de los vectores "a" y "b",seleccionando las frecuencias más relevantes a partir del co-espectro.
 El algoritmo de calculo se realiza en las siguentes fases:
 
@@ -38,4 +57,8 @@ d) Obtiene $\dot e=WI_nW^T\dot u$, incluyendo el vector correspondiente al pará
 e) Realiza el test de durbin a los modelos estimados, y selecciona aquellos en donde los $e_t=W^T\dot e$ están dentro de las bandas elegidas a los niveles de significación $\alpha=0.1;0.05;0.025;0.01;0.005$. 
 
 f) De todos ellos elige aquel que tiene menos regresores. Si no encuentra modelo ofrece la solución MCO al modelo de regresión lineal simple. 
+
+TD.R función que realiza la representación gráfica deltest de Durbin(1969)
+
+
 

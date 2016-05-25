@@ -1,7 +1,7 @@
 # descomponer-1.2
 descomponer.R
 
-nueva función descomponer que corrigue errores en descomponer 1.
+Nueva función descomponer que corrigue errores en descomponer 1.
 
 MW.R
 
@@ -58,7 +58,7 @@ e) Realiza el test de durbin a los modelos estimados, y selecciona aquellos en d
 
 f) De todos ellos elige aquel que tiene menos regresores. Si no encuentra modelo ofrece la solución MCO al modelo de regresión lineal simple. 
 
-TD.R función que realiza la representación gráfica deltest de Durbin(1969)
+TD.R función que realiza la representación gráfica del test de Durbin(1969)
 
 
 
